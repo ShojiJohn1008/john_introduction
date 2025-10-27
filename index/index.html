@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Home｜自己紹介＋クイズ</title>
+  <meta name="description" content="自己紹介とクイズで、学びの現在地を知ってもらうホームページ。">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <h1>こんにちは、<span class="accent">私の学びラボ</span>へ</h1>
+    <p class="tagline">“初学者 × 思考の見える化” をゆるく実験中。</p>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <!-- Hero / Short Intro -->
+    <section aria-labelledby="intro-title" class="card">
+      <h2 id="intro-title">自己紹介（Short）</h2>
+      <p>
+        いまはプログラミングを学び始めたばかり。HTMLの意味構造と、学びを記録して再利用する
+        UIの考え方にハマっています。価値観は <strong>再現性 &gt; 偶然</strong>、
+        <strong>可読性 &gt; 一発芸</strong>、学びは<strong>公開して育てる</strong>派。
+      </p>
+      <ul class="bullets">
+        <li>今月のフォーカス：HTMLのセマンティクス／CSSのレイアウト思考</li>
+        <li>好きな学び方：仮説→最小実験→振り返り</li>
+        <li>リンク：<a href="https://x.com/John8__8" target="_blank" rel="noopener">X（参考）</a></li>
+      </ul>
+    </section>
+
+    <!-- Quiz Intro -->
+    <section aria-labelledby="quiz-intro-title" class="card">
+      <h2 id="quiz-intro-title">クイズ（全5問・約90秒）</h2>
+      <p>「私の“学びの癖”、どれくらい当てられる？」選んだ理由まで読むと楽しいやつ。</p>
+    </section>
+
+    <!-- Quiz Body -->
+    <form id="quiz" class="card" aria-labelledby="quiz-title">
+      <h3 id="quiz-title">あなたの理解度テスト</h3>
+
+      <!-- Q1 -->
+      <fieldset class="q">
+        <legend>1) 朝の30分、学習ログに残すのは？</legend>
+        <label><input type="radio" name="q1" value="A" required> 成果物のスクショ</label>
+        <label><input type="radio" name="q1" value="B"> つまずきと仮説</label>
+        <label><input type="radio" name="q1" value="C"> 参考記事のURL羅列</label>
+      </fieldset>
+
+      <!-- Q2 -->
+      <fieldset class="q">
+        <legend>2) 1つだけ残すならどっち？</legend>
+        <label><input type="radio" name="q2" value="A" required> 動くけど読みにくいコード</label>
+        <label><input type="radio" name="q2" value="B"> 動かないけど読みやすい設計</label>
+      </fieldset>
+
+      <!-- Q3 -->
+      <fieldset class="q">
+        <legend>3) 目標設定で重視するのは？</legend>
+        <label><input type="radio" name="q3" value="A" required> 終了日</label>
+        <label><input type="radio" name="q3" value="B"> 測定可能な到達基準</label>
+        <label><input type="radio" name="q3" value="C"> ご褒美</label>
+      </fieldset>
+
+      <!-- Q4 -->
+      <fieldset class="q">
+        <legend>4) 初めての概念に出会ったとき、最初にやることは？</legend>
+        <label><input type="radio" name="q4" value="A" required> 全部写経</label>
+        <label><input type="radio" name="q4" value="B"> 用語を自分の言葉で再定義</label>
+        <label><input type="radio" name="q4" value="C"> すぐ応用に走る</label>
+      </fieldset>
+
+      <!-- Q5 -->
+      <fieldset class="q">
+        <legend>5) バグ遭遇。最初の一手は？</legend>
+        <label><input type="radio" name="q5" value="A" required> ファイルを総入れ替え</label>
+        <label><input type="radio" name="q5" value="B"> 再現手順を最小化</label>
+        <label><input type="radio" name="q5" value="C"> 検索して似たコードを貼る</label>
+      </fieldset>
+
+      <button type="submit" class="btn">判定する</button>
+      <p id="hint" class="hint" aria-live="polite"></p>
+    </form>
+
+    <!-- Result -->
+    <section id="result" class="card hidden" aria-live="polite">
+      <h3>結果</h3>
+      <p class="score" id="score"></p>
+      <div id="explain"></div>
+      <hr>
+      <p class="meta">タイプ診断：<span id="type"></span></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <small>© <span id="year"></span> My Lab. 学びは実験。</small>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
